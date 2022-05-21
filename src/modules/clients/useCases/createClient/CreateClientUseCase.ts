@@ -16,7 +16,7 @@ export class CreateClientUseCase {
         }
       }
     })
-    if (!clientExist) {
+    if (clientExist) {
       throw new Error("Client already exists")
     }
     const hashPassword = await hash(password, 10);
